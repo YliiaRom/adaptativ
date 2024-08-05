@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap&subset=cyrillic-ext" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wraper">
+    <header class="header">
+      <!--...............ШАПКА............................................... -->
+      <div class="header__conteiner _conteiner">
+        <a href="" class="header_logo">LOGO</a>
+        <nav class="header__menu menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="" class="menu__link">HOME</a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__link">Studio</a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__link">Portfolio</a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__link">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+      
+        
+      </div>
+    </header>
+     <!--...........1-й БЛОК................................................... -->
+    <main class="page">
+      <div class="page__main-block main-block">
+        <div class="main-block__conteiner _conteiner">
+          <h1 class="main-block__title"></h1>
+          <div class="main-block__text">
+
+          </div>
+          <div class="main-block__buttons">
+
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  <!--...........FOOTER................................................... -->
+    <div class="footer footer">
+      Я подвал
+    </div>
+
+   
+   
+  <div class="conteiner-text">
+
+
+      <ol>
+       
+        <li>
+        <p>Всегда оболочка div class=wraper -> чтоб не получался горизонтальный скрол при отрицательных отступах.   overflow: hidden - это свойство поможет скрыть всё лишнее. Если это добавить для body не сможем скролить сайт, а если для внутренней оболочки wrapper - то всё будет ок.</p>
+        </li>
+        <li>Анализируем макет, составляем бэм блоки учитывая адаптив.</li>
+        <li>В figma выставляем линейки- shift +r (view-Rulers)-выстроить ограничивающий контейнер. Мышью потянуть с линейки  красные линии для установки границ полотна- откуда идут многие элементы.</li>
+        <li>Обнуляем все свойства <div class="img-code"><img class="img-code" src="/img/обнуление css свойств — копия.jpg" alt="css свойства"></div> </li>
+        <li>Создаём технический класс, он начинается с нижнего подчёркивания.._conteiner {
+          max-width: 1046px;
+          margin: 0 auto;
+        }- выставит контейнер по середине <br>
+        </li>
+        <li>Смотрим какие шрифты на макете figma- в плагинах ищим Font Fascia = нажимаем смотрим результат (можно раскрыть и увидить список какие элементы исgjkmpe.используют). <br>
+        Зайти в VS code -> в поисковике набрать-> >goole fons -> выбрать там где link и найдя нужны  шрифт подключить его в head. В конце дописать &display=swap&subset=cyrillic-ext  -влияет позитивно на оптимизацию на очки в google эйчспи</li>
+        <li></li>
+      </ol>
+      <ol>
+        <li>Начинаем точечный анализ с шапки (логотип и навигация). Есть ограничив контейнер. l делим на колонки (2 элемента: логотим и навигация( в ней блоки списков)) с отступами вверху и низу.</li>
+        <li>Ставим красную линию- отделяем </li>
+        <li> В html добавляем  header class="header" <br>
+          div class="header__conteiner_conteiner"- Добавляем технический класс _conteiner , который ранее описали в css <br>- На этот обект будут действовать ограничения ширины и отцентровка 
+           ._conteiner {
+            max-width: 1046px;
+            margin: 0 auto;<br>
+            Внутри контейнера живет контент и никуда не расползается
+          </li>
+        <li>стоит подумать можно ли использовать в headere flex  контейнер- Да</li>
+        <li>Стоит ли делать логопит ссылкой- и какую ширину сыылки, чтоб пользователь не наклацал</li>
+        <li>Создаём ссылку с класом a.header_logo </li>
+        <li>Создаём меню: nav.header__menu menu</li>
+        <li>Создаём список меню:ul.menu__list>li.menu__item$>a.menu__link</li>
+        <li>Копируем контент c фигмы и вставляем</li>
+        <li>Правило: Сделали блок какой-то в html пойдите сверстайте его в css!</li>
+        <li>Существует eCSStractor for VSCode- плагин -он поможет скопировать сразу классы с html и перенести их в css - принцип работы: выделить в html->правой клавишей выбрать ecsstractor RUN-> в css нажать ctrl +v</li>
+        <li> Разделять блоки коментарием потом проще искать что-то в коде</li>
+        <li> Понимаем что шапка надвисает -абсолютное позиционирование <br>
+          .header {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 50;-большой индекс чтоб была на первом плане 
+          }</li>
+          <li>лайф -хак установить минимальную высоту 104 px.(высота шапки) <br>
+            .header__conteiner {
+              display: flex;
+              min-height: 104px;
+              align-items: center;
+            }- Обекты выставленны в ряд и отцентрованны </li>
+          <li>Надо сделать расстояние между блоками меню <br>
+            .header__menu {
+              margin: 0px 0px 0px 133px;
+            }</li>
+          <li>Делаем цвет и размер шрифта по умолчанию- пройтись по сайту о понять основной цвет-сравнить все цвета шрифтов-> скопировать основной шрифт с фигмы. Пройтись по шрифтам сравнить каких размеров больше и тоже параметры скопировать и поставить в css. <img class="slyle-css" src="/img/шаблон стилей.jpg" alt="шаблон стилей"></li>
+          <li>Создаём свойства для лого: <br>
+             .header_logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: inherit;
+          } Сылки не наследуют свойства , поэтому надо указать свойство inherit- чтоб наследовало от родителей </li>
+          <li>1ю00ю34</li>
+        
+      </ol>
+      <ol>
+        <li>Берёмся за пункты меню: .menu__link {
+          color: rgba(46, 47, 66, 1);
+          line-height: 24px;- можем записать в % для того чтоб если надо поменять шрифт- чтоб оно соответствовало.(на калькуляторе 24 делим на 14 умножаем на 100=171%- line-height: 171%;</li>
+        <li>Итог: .menu__link {
+          color: #2e2f42;
+          font-weight: 600;
+          line-height: calc(24 / 14 * 100%);
+        } </li>
+        <li>Выстраиваем в ряд <br>
+          .menu__list {
+          display: flex;
+        }</li>
+        <li> Делаем отступы между блоками меню 21 px. Кроме последнего  <br>.menu__item:not(:last-child) {
+          margin: 0px 21px 0px 0px;
+        }
+        </li>
+      </ol>
+      <ul>
+        <li>Теперь стараемся сразу адаптировать это </li>
+        <li>Включаем инструменты разработчика в хроме F12-смотрим как будет на разных гаджетах выглядеть</li>
+        <li>Видим что идёт прилипание к контенту когда сужаем. ._conteiner {
+          max-width: 1046px;
+          padding: 0px 15px;
+          margin: 0 auto;
+          box-sizing: content-box;
+        } <br>
+        padding: 0px 15px; либо box-sizing: content-box;- появяться отступы безопасности</li>
+        <li>Жёсткости в пунктах придерживаться нельзя, надо чтоб элементы ломались когда манитор становится меньше .menu__list {
+          flex-wrap: wrap;
+          display: flex;
+        } Свойство flex-wrap: wrap;- поможет чтоб ломались эленты при меньшем экране , а line-hight делает что пункты не слипаются</li>
+        <li>РАБОТАЕМ С АДАПТИВОМ @media (max-width:767px) {
+          .header__menu {
+            margin: 0px 0px 0px 40px;
+          }
+        } </li>
+        <li>Создаём отступы безопасности ( потому что если очень много пунктов, они могут прилипнуть к шапочке- 
+          .menu {padding: 5px 0;}
+        </li>
+        <li>Сделать ещё один брекпоинт и на меньшем экране уменьшив отступ , увеличить шрифт <br>
+          @media (max-width:479px) {
+            .header__menu {
+              margin: 0px 0px 0px 20px;
+            }
+          } <br>
+          @media (max-width:479px) {
+            .menu__link  {
+              font-size: 18px;
+            }
+          }- автоматически увеличится line-hight потому что оно процентный</li>
+        <li>Пункты не ставим в низ, потому что хочется оставить нормальный размер шапки. Но его чуть надо уменьшить на мобилках: @media (max-width: 479px) {
+          .header__conteiner {
+            min-height: 70px;
+          }
+        }</li>
+        
+      </ul>
+             <!--...........1-й БЛОК.......page............................................ -->
+             <ul>
+              <li>Анализируем 1-й блок:</li>
+              <li>У него есть ограничивающий контейнер, шапка не часть этого блока - она надвисает над ним, потом котентная часть, отступы.Есть 3 элемента : большой заголовок, текст, блок с кнопками, сами кнопки. На фоне - изображение.</li>
+              <li>В начале выгрузить контент.Существует контентное изображение, идображение декора, есть иконки и для каждого изображения свой формат. Когда контентное изображение -рекомендация jpeg- лучше поддается оптимизации.В figma выделяем фото-> нажимаем экспорт-> в папке img создаём папку mainblock  и грузим фото туда.</li>
+              <li>Поскольку первый блок надвисает нужно создать общий блок всего контента. main.page <br>
+               </li>
+              <li>позволяем увеличиваться .main {
+                flex: 1 1 auto;
+              }</li>
+              <li>.page>page__main-block main-block>main-block__conteiner _conteiner - В нём 3 элемента _ Заголовок 1, текст, кнопки </li>
+              <li> Когда копируете конспект включите и смотрите на стили чтоб по 2 раза не ходить )</li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+                    <!--...........FOOTER................................................... -->
+            <ul>
+              <li>Создать footer.footer</li>
+              <li>footer прибить сразу к низу страницы ( Есть разные способы: margin-top, и тд. но лучше flex: .wraper { display: flex;
+                flex-direction: column;}</li>
+              <li>Будет прибит снизу, а когда не будет помещаться будет прибит скрол- самый надёжный способ+ практика для понимания flex</li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+
+  
+
+  </div> 
+
+  </div>
+  <script src="js/script.js"></script>
+  
+</body>
+</html>
