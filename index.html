@@ -37,22 +37,30 @@
     <main class="page">
       <div class="page__main-block main-block">
         <div class="main-block__conteiner _conteiner">
-          <h1 class="main-block__title"></h1>
-          <div class="main-block__text">
-
+          <!-- ........................огранич контейнер.... -->
+          <div class="main_block_body">
+            <h1 class="main-block__title">Effective Solutions
+            for Your Business</h1>
+            <div class="main-block__text">
+              Bring the key message to the brand's audience for the best price within the shortest possible time.
+            </div>
+            <div class="main-block__buttons">
+              <a href="#" class="main-block__buttons">Get Quote Now</a>
+              <a href="#" class="main-block__buttons main-block__buttons_border">Learn More</a>
+            </div>
           </div>
-          <div class="main-block__buttons">
 
-          </div>
-
+        </div>
+        <div class="main-block_image _ibg">
+          <img src="img/шаблон стилей.jpg" alt="cover">
         </div>
       </div>
 
     </main>
   <!--...........FOOTER................................................... -->
-    <div class="footer footer">
+    <footer class="footer footer">
       Я подвал
-    </div>
+    </footer>
 
    
    
@@ -193,9 +201,29 @@
               }</li>
               <li>.page>page__main-block main-block>main-block__conteiner _conteiner - В нём 3 элемента _ Заголовок 1, текст, кнопки </li>
               <li> Когда копируете конспект включите и смотрите на стили чтоб по 2 раза не ходить )</li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <li>Копируем и вставляем h1, текст под ним и кнопочки</li>
+              <li>Создаём кнопки вкладывая их в сылки </li>
+              <li>Создаём ограничивающий контейнер</li>
+              <li>.main_block_body> *:not(:last-child) {
+                margin: 0px 0px 35px 0px;- применим нижние отступы ко всем элементам текста на фоновом изображении !!!-это очень важно - при смене местами текста или отмене его ничего не поменяется
+              }</li>
+              <!-- .............Фоновое изображение ................ -->
+              <li>Под контейнером добавляем изображения</li>
+              <li>.main-block_image _ibg - класс ibg делает из картинки фоновое изображение, НЕ делать сразу фоном чтоб не капошиться в стилях-легче потом выводить картинки если в php выводить картинку. <br>
+                ._ibg {
+                  position: relative;
+                } <br>
+                .ibg img {
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  top: 0;
+                  left: 0;
+                  object-fit: cover;-решает все проблемы
+                } <br>
+              </li>
+              <li> картинка будет абсолютна -Не желательно писать инлайновые стили-картинка будет на фоне</li>
+              <li>Контент-размеразадающее звено!</li>
             </ul>
                     <!--...........FOOTER................................................... -->
             <ul>
