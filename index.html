@@ -33,30 +33,31 @@
         
       </div>
     </header>
-     <!--...........1-й БЛОК................................................... -->
-    <main class="page">
-      <div class="page__main-block main-block">
-        <div class="main-block__conteiner _conteiner">
-          <!-- ........................огранич контейнер.... -->
-          <div class="main_block_body">
-            <h1 class="main-block__title">Effective Solutions
-            for Your Business</h1>
-            <div class="main-block__text">
-              Bring the key message to the brand's audience for the best price within the shortest possible time.
+      <!--......1-БЛОК........................................ -->
+      <main class="page">
+        <div class="page__main-block main-block">
+          <div class="main-block__conteiner _conteiner">
+            <!-- ........................огранич контейнер.... -->
+            <div class="main_block_body">
+              <h1 class="main-block__title">Effective Solutions
+              for Your Business</h1>
+              <div class="main-block__text">
+                Bring the key message to the brand's audience for the best price within the shortest possible time.
+              </div>
+              <div class="main-block__buttons">
+                <a href="#" class="main-block__button main-block__button_orange">Get Quote Now</a>
+
+                <a href="#" class="main-block__button main-block__button_border">Learn More</a>
+              </div>
             </div>
-            <div class="main-block__buttons">
-              <a href="#" class="main-block__buttons">Get Quote Now</a>
-              <a href="#" class="main-block__buttons main-block__buttons_border">Learn More</a>
-            </div>
+
           </div>
-
+          <div class="main-block_image _ibg">
+            <img src="img/header.jpg" alt="cover">
+          </div>
         </div>
-        <div class="main-block_image _ibg">
-          <img src="img/шаблон стилей.jpg" alt="cover">
-        </div>
-      </div>
 
-    </main>
+       </main>
   <!--...........FOOTER................................................... -->
     <footer class="footer footer">
       Я подвал
@@ -128,7 +129,7 @@
             font-weight: 700;
             color: inherit;
           } Сылки не наследуют свойства , поэтому надо указать свойство inherit- чтоб наследовало от родителей </li>
-          <li>1ю00ю34</li>
+         
         
       </ol>
       <ol>
@@ -224,6 +225,26 @@
               </li>
               <li> картинка будет абсолютна -Не желательно писать инлайновые стили-картинка будет на фоне</li>
               <li>Контент-размеразадающее звено!</li>
+              <!-- ..............Кнопки....................... -->
+               <li>ВЕРСТАЕМ КНОПКИ</li>
+               <li> Делая основною картинку -смотрим при скольки Зpx теряется главный объект - делаем @media и смотрим когда теряется текст основной из-за фонового рисунка- предупреждаем это-ВЫБЕЛИВАЯ- opacity: 0.5! <br>
+                @media (max-width: 1300px) {
+                  .main-block_image img {
+                    object-position: right;
+                  }
+                }</li>
+               <li>Чтоб текс не терялся можно выбелить картинку : Сначала определить разрешение -> возьмем планшетное разрешение 992px -при котором начнет теряться текс <br>
+                @media (max-width: 992px) {
+                  .main-block_image {
+                    opacity: 0.5;
+                  }
+                } </li>
+               <li>Надо поуменьшать отступы при уменьшении экранов <br> @media (max-width: 992px) {
+                .main_block_body {
+                  padding: 120px 0px 191px 0px;
+                }
+              } </li>
+               <li></li>
             </ul>
                     <!--...........FOOTER................................................... -->
             <ul>
