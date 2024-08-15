@@ -12,7 +12,7 @@
     <header class="header">
       <!--...............ШАПКА............................................... -->
       <div class="header__conteiner _conteiner">
-        <a href="" class="header_logo">LOGO</a>
+        <a href="#" class="header_logo">LOGO</a>
         <nav class="header__menu menu">
           <ul class="menu__list">
             <li class="menu__item">
@@ -43,6 +43,11 @@
               for Your Business</h1>
               <div class="main-block__text">
                 Bring the key message to the brand's audience for the best price within the shortest possible time.
+                -отрицательные mergin подтягивают все блоки: .page__services {
+                  position: relative;
+                  z-index: 2;
+                  margin: -111px 0px 0px 0px;
+                }
               </div>
               <div class="main-block__buttons">
                 <a href="#" class="main-block__button main-block__button_orange">Get Quote Now</a>
@@ -56,6 +61,73 @@
             <img src="img/header.jpg" alt="cover">
           </div>
         </div>
+        <!-- ..............карты над блоком  .section.page__services services>.services__conteiner _conteiner>.services__body>.services__column>.services__item item-service>(.item-service__icon+h3.item-service__title+.item-service__text)..................... -->
+        <section class="page__services services">
+          <div class="services__conteiner _conteiner">
+            <div class="services__body">
+              <div class="services__column">
+                <div class="services__item item-service">
+                  <div class="item-service__icon">
+                    <img src="img/facebook 1.svg" alt="Envimental Consulting">
+                  </div>
+                  <h3 class="item-service__title">Envimental Consulting</h3>
+                  <div class="item-service__text"> section.page__services services>.services__conteiner _conteiner>.services__body>.services__column>.services__item item-service>(.(item-service__icon>img)+h3.item-service__title+.item-service__text).</div>
+                </div>
+              </div>
+              <div class="services__column">
+                <div class="services__item item-service">
+                  <div class="item-service__icon">
+                    <img src="img/linkedin 1.svg" alt="Envimental Consulting">
+                  </div>
+                  <h3 class="item-service__title">Envimental Consulting</h3>
+                  <div class="item-service__text">  РАЗМНОЖИТЬ :services__column>.services__item item-service>(.(item-service__icon>img)+h3.item-service__title+.item-service__text).</div>
+                </div>
+              </div>
+              <div class="services__column">
+                <div class="services__item item-service item-service_green">
+                  <div class="item-service__icon">
+                    <img src="img/instagram 2.svg" alt="Envimental Consulting">
+                  </div>
+                  <h3 class="item-service__title">CSS</h3>
+                  <div class="item-service__text"> 
+                    .services__body {
+                      display: flex;
+                      margin: 0px -15px;
+                    } <br>
+                    .services__column {
+                      padding: 0px 15px;
+                      flex: 0 1 33.333%;
+                    }br
+                    .services__item {
+                      box-shadow: 0px 13px 13px rgba(0, 0, 0, 0.07);
+                      background-color: #fff;
+                      padding: 35px;
+                    } <br>
+                    .item-service {
+                    } <br> 
+                    .item-service > *:not(:last-child){
+                      margin: 0px 0px 10px 0px;
+                    } <br>
+                    .item-service__icon {
+                    } <br>
+                    .item-service__title {
+                      font-weight: 700;
+                      letter-spacing: 0.1;
+                    
+                      font-size: 24px;
+                      line-height: 133%;
+                    } <br>
+                    .item-service__text {
+                      color: #737373;
+                      line-height: 142%;
+                    }. если прописать в .services__item {
+                      height: 100%;- будут контейнеры одного размера , а не разного в зависимости от наполнения (так было раньше!)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
 
        </main>
   <!--...........FOOTER................................................... -->
@@ -244,8 +316,52 @@
                   padding: 120px 0px 191px 0px;
                 }
               } </li>
-               <li></li>
+               <li> лайф хак : <br>
+              подход-MOBILE_FIRST-делать отступ вправо только на экранах шире: <br>
+              @media (max-width: 479px) {
+                .main-block__button {
+                  flex: 1 1 100%;
+                }
+              } <br>
+              @media (min-width: 479px) {
+              .main-block__button:not(:last-child){
+                margin-right: 10px;
+              }
+              }- КНОПКИ СТАНОВЯТСЯ ШИРЕ ПРИ МЕНЬШЕМ ЭКРАНЕ</li>
+              <li> затемнение шрифта при меньшем экране <br>
+                @media (max-width: 479px) {
+                 .main-block__text {color: #1a1919;}
+                }</li>
             </ul>
+            <!-- ............БЛОК из 3-х карт.............. -->
+            <div>
+              <ul>
+                <li><h2>КАРТЫ НАСЛОЕННЫЕ НА БЛОК</h2></li>
+                <li>Чтоб СОЗДАТЬ КАРТЫ  , которые наслаиваються на верхний блок надо:</li>
+                <li> 
+                   Класс назывем в зависимости от вида карт. 
+                </li>
+                <li>page__services services>.services__conteiner _conteiner>.services__body>.services__column>.services__item item-service>(.item-service__icon+h3.item-service__title+.item-service__text)</li>
+                <li>Существует иконочный шрифт и контентные иконки - необходимо знать разницу!</li>
+                <li> НЕ идти дальше пока не сверстаешь блок, посмотреть нет ли ошибки чтоб много не исправлять.</li>
+                <li> Надо прослушать по раздвижению flex компонентов -.services__body {
+                  display: flex;
+                  margin: 0px -15px;
+                } <br>
+                .services__column {
+                  padding: 0px 15px;
+                  flex: 0 1 33.333%;
+                }-1.56.00-обьясняет</li>
+                <li>ПОДНЯТЬ ОБЪЕКТЫ- отрицательный margin</li>
+                <li>только за отрицательным mergin  поднимуться все блоки.page__services {
+                  position: relative;
+                  z-index: 2;
+                  margin: -111px 0px 0px 0px;
+                }</li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
                     <!--...........FOOTER................................................... -->
             <ul>
               <li>Создать footer.footer</li>
